@@ -1,0 +1,59 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Start page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "#"
+      },
+      {
+        text: "Section",
+        href: "#"
+      },
+      {
+        text: "Subsection"
+      }
+    ]
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <p><a rel="external" href="can-mediation-use-telephone-individual.html" > < Back</a></p>
+
+    <div class="govuk-form-group">
+      <h1 class="govuk-label-wrapper">
+        <label class="govuk-label govuk-label--l" for="more-detail">
+          Please provide an alternative number
+        </label>
+      </h1>
+      <div id="more-detail-hint" class="govuk-hint">
+        For example +447906898854
+      </div>
+      <input class="govuk-input" type="text" id="more-detail" name="more-detail" maxlength="15" aria-describedby="more-detail-hint" style="width: 20ch;">
+    </div>
+
+    <a href="can-mediation-use-email-individual.html" class="govuk-button" data-module="govuk-button">
+      Continue
+    </a>
+
+    {% include 'components/contact.html' %}
+    
+
+  </div>
+</div>
+{% endblock %}

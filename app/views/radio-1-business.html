@@ -1,0 +1,75 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Start page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "#"
+      },
+      {
+        text: "Section",
+        href: "#"
+      },
+      {
+        text: "Subsection"
+      }
+    ]
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+  <div class="govuk-grid-row">
+
+    <p><a rel="external" href="task-list-1-business.html" > < Back</a></p>
+
+      <h1 class="govuk-heading-l">
+      Do you want to settle the claim for the £50 the defendant admitted?
+      </h1>
+
+      <p>This is the total amount you'll be paid, including the claim fee and interest if applicable.</p>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio" value="england">
+              <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+                <p>Yes</p>
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio" value="england">
+                <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+                  <p>No</p>
+                </label>
+              </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <a href="task-list-2-business.html" class="govuk-button" data-module="govuk-button">
+        Save and continue
+    </a>
+
+    <div class="govuk-!-padding-bottom-6"></div>
+
+    {% include 'components/contact.html' %}
+
+{% endblock %}

@@ -1,0 +1,139 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Start page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "#"
+      },
+      {
+        text: "Section",
+        href: "#"
+      },
+      {
+        text: "Subsection"
+      }
+    ]
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Your response
+      </h1>
+
+      <h2 class="govuk-heading-m">Application incomplete</h2>
+
+      <p>You have completed 1 of 4 sections</p>
+
+      <p>After you have completed all the actions you will be taken to a page where you can check your answers before submitting.</p>
+
+      <div class="govuk-!-padding-bottom-1"></div>
+
+      <ol class="app-task-list">
+        <!-- Section 1 -->
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">1. </span> How they responded
+          </h2>
+          <ul class="app-task-list__items">
+    ​
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a class="govuk-link govuk-link--no-visited-state" href="#" aria-describedby="Employer-contact-details-status">
+                  View the defendant's response
+                </a>
+              </span>
+              <strong class="govuk-tag app-task-list__tag govuk-tag--dark-blue dashboard-tags" id="Employer-contact-details-status">Completed</strong>
+            </li>
+          </ul>
+        </li>
+      <!-- Section 2 -->
+    <li>
+      <h2 class="app-task-list__section">
+        <span class="app-task-list__section-number">2. </span> Choose what to do next
+      </h2>
+      <ul class="app-task-list__items">
+        <li class="app-task-list__item">
+          <span class="app-task-list__task-name">
+            <a class="govuk-link--no-visited-state" href="radio-1-business.html" aria-describedby="early-conciliation-status">
+              Accept or reject the £50
+            </a>
+          </span>
+          <strong class="govuk-tag govuk-tag--dark-blue app-task-list__tag dashboard-tags" id="early-conciliation-status">Completed</strong>
+
+          <li class="app-task-list__item">
+            <span class="app-task-list__task-name">
+              <a class="govuk-link--no-visited-state" href="telephone-mediation-business.html" aria-describedby="early-conciliation-status">
+                Telephone mediation
+              </a>
+            </span>
+            <strong class="govuk-tag govuk-tag--dark-blue app-task-list__tag dashboard-tags" id="early-conciliation-status">Completed</strong>
+
+            <li class="app-task-list__item">
+                <span class="app-task-list__task-name">
+                  <a class="govuk-link--no-visited-state" href="is-name-attending-business.html" aria-describedby="early-conciliation-status">
+                    Availability for mediation
+                  </a>
+                </span>
+                <strong class="govuk-tag govuk-tag--grey app-task-list__tag dashboard-tags" id="early-conciliation-status">Incomplete</strong>
+      
+      
+      
+        </ul>
+    
+    <li>
+
+        <li>
+            <h2 class="app-task-list__section">
+              <span class="app-task-list__section-number">3. </span> Choose what to do next
+            </h2>
+            <ul class="app-task-list__items">
+              <li class="app-task-list__item">
+                <span class="app-task-list__task-name">
+                  <a class="govuk-link--no-visited-state" href="#.html" aria-describedby="early-conciliation-status">
+                    Give us details in case there's a hearing
+                  </a>
+                </span>
+                <strong class="govuk-tag govuk-tag--grey app-task-list__tag dashboard-tags" id="early-conciliation-status">Incomplete</strong>           
+              </ul>
+          
+          <li>
+    
+    <!-- section 3 -->  
+    <li>
+      <h2 class="app-task-list__section">
+        <span class="app-task-list__section-number">4. </span> Submit
+      </h2>
+      <ul class="app-task-list__items">
+        <li class="app-task-list__item">
+          <span class="app-task-list__task-name">
+            <a class="govuk-link--no-visited-state" href="#.html" aria-describedby="early-conciliation-status">
+              Check and submit your response
+            </a>
+          </span>
+          <strong class="govuk-tag govuk-tag--grey app-task-list__tag dashboard-tags" id="early-conciliation-status">Incomplete</strong>
+        </ul>
+      <li>
+  </ul>
+</li>
+</ol>
+
+
+    {% endblock %}

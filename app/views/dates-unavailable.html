@@ -1,0 +1,90 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Start page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "#"
+      },
+      {
+        text: "Section",
+        href: "#"
+      },
+      {
+        text: "Subsection"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <p><a rel="external" href="can-mediation-use-email-individual.html"> < Back</a></p>
+
+    <div data-module="moj-add-another">
+      <form id="availability-form" method="POST" action="">
+        <fieldset class="govuk-fieldset moj-add-another__item">
+
+          <h1 class="govuk-heading-l">Are there any dates in the next 3 months when you cannot attend mediation?</h1>
+
+          {% from "govuk/components/radios/macro.njk" import govukRadios %}
+          {{ govukRadios({
+            name: "availability",
+            fieldset: {
+              legend: {
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            hint: {
+              text: "These should only be the dates of important events like medical appointments, other court hearings, or holidays you've already booked. If you do not attend your appointment, you may face a penalty."
+            },
+            items: [
+              {
+                value: "yes",
+                text: "Yes"
+              },
+              {
+                value: "no",
+                text: "No"
+              }
+            ]
+          }) }}
+        </fieldset>
+      
+        <button type="button" id="save-continue-button" class="govuk-button" data-module="govuk-button">
+          Save and continue
+        </button>
+      </form>
+    </div>
+
+    {% include 'components/contact.html' %}
+    
+  </div>
+</div>
+
+<script>
+document.getElementById("save-continue-button").addEventListener("click", function() {
+  var selectedValue = document.querySelector('input[name="availability"]:checked').value;
+  
+  if (selectedValue === "yes") {
+    window.location.href = "date-picker.html";
+  } else if (selectedValue === "no") {
+    window.location.href = "task-list-4-individual.html";  
+  }
+});
+</script>
+
+{% endblock %}
