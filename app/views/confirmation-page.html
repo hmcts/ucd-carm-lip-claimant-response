@@ -1,0 +1,79 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Start page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "#"
+      },
+      {
+        text: "Section",
+        href: "#"
+      },
+      {
+        text: "Subsection"
+      }
+    ]
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+    
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+      <div class="govuk-grid-row">
+        
+        <div class="govuk-grid-column-two-thirds-from-desktop">
+        
+            <div class="govuk-panel govuk-panel--confirmation">
+                <h1 class="govuk-panel__title">
+                  Application complete
+                </h1>
+                <div class="govuk-panel__body">
+                  Your reference number<br><strong>HDJ2123F</strong>
+                </div>
+              </div>
+
+
+
+              <p>You have decided not to accept the defendant's offer and wish to proceed with the claim.</p>
+
+              <h2 class="govuk-heading-m">
+                What happens next?
+              </h2>
+
+              <p>A mediation appointment will now be arranged by the Small Claims Mediation Service. 
+                We will email you the date of your mediation appointment within the next 28 days. </p>
+
+                <p>If a settlement is agreed at mediation, you will not need to go to court.</p>
+
+                <p>If you do not attend your mediation appointment, you may be subject to penalties. 
+                    You may be ordered to pay costs, or the Judge may automatically rule in the defendant's favour.</p>
+          
+       
+             
+    
+          
+          
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  {% include 'components/contact.html' %}
+
+  {% endblock %}
