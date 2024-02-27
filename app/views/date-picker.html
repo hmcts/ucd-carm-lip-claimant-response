@@ -238,7 +238,14 @@
                     </div>
               </div>
 
-              <div class="govuk-!-padding-bottom-4"></div> 
+              <div class="govuk-!-padding-bottom-2"></div> 
+
+               <!-- Error message placeholder -->
+               <div id="error-message" class="govuk-form-group govuk-form-group--error" style="display: none;">
+                <span id="error-text" class="govuk-error-message"></span>
+              </div>
+
+              <div class="govuk-!-padding-bottom-2"></div>
 
               <button type="button" id="add-date-button" class="govuk-button govuk-button--secondary" data-module="govuk-button">
                 Add another date or period of time
@@ -269,5 +276,30 @@
     additionalDateSection.style.display = 'block';
   });
 </script>
+
+<script>
+    document.getElementById('save-continue-button').addEventListener('click', function (event) {
+      // Validate form fields
+      var isValid = validateForm();
+      // If validation fails, prevent form submission and display error message
+      if (!isValid) {
+        event.preventDefault(); // Prevent form submission
+        document.getElementById('error-text').innerText = 'Please enter the dates that you cannot attend mediation';
+        document.getElementById('error-message').style.display = 'block';
+      }
+    });
+  
+    // Function to validate form fields
+    function validateForm() {
+      // Check if any date input field is filled
+      var dateInputs = document.querySelectorAll('.govuk-input.govuk-input--width-2, .govuk-input.govuk-input--width-4');
+      for (var i = 0; i < dateInputs.length; i++) {
+        if (dateInputs[i].value.trim() !== '') {
+          return true; // At least one date input is filled, return true
+        }
+      }
+      return false; // No date input is filled, return false
+    }
+  </script>
 
 {% endblock %}
